@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMH FocusBlock</title>
+  <script type="module" crossorigin src="./popup.js"></script>
+  <link rel="stylesheet" crossorigin href="./popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-badge">FB</div>
+        <div>
+          <h1 class="title">LMH FocusBlock</h1>
+          <p class="subtitle">Không gian học tập tập trung</p>
+        </div>
+      </div>
+      <div class="global-switch-wrapper">
+        <label class="switch" title="Bật/Tắt toàn bộ tiện ích">
+          <input type="checkbox" id="global-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Global Status Banner -->
+    <div id="status-banner" class="status-banner status-active">
+      <span class="status-dot"></span>
+      <span id="status-text" class="status-text">Đang bảo vệ toàn hệ thống</span>
+    </div>
+
+    <!-- Current Site Section -->
+    <section class="card" id="current-site-section">
+      <div class="card-header">
+        <span class="section-label">Trang web hiện tại</span>
+        <span id="site-status-badge" class="badge badge-active">Đang chặn</span>
+      </div>
+      <div class="domain-display" id="current-domain">Đang tải...</div>
+      
+      <div class="site-action-row">
+        <span class="action-label">Chặn quảng cáo trên trang này</span>
+        <label class="switch">
+          <input type="checkbox" id="site-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Real Stats (No fake counters) -->
+    <section class="card stats-card">
+      <div class="stat-item">
+        <span class="stat-label">Quy tắc mạng (DNR)</span>
+        <span class="stat-value" id="stat-rules">20</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-label">Trang cho phép</span>
+        <span class="stat-value" id="stat-whitelist">0</span>
+      </div>
+    </section>
+
+    <!-- Whitelist Management Section -->
+    <section class="card">
+      <div class="card-header">
+        <span class="section-label">Danh sách website cho phép (Whitelist)</span>
+      </div>
+      
+      <form id="add-domain-form" class="add-domain-form">
+        <input 
+          type="text" 
+          id="domain-input" 
+          placeholder="Nhập tên miền (vd: edu.vn)" 
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button type="submit" id="add-domain-btn" class="btn-primary">Thêm</button>
+      </form>
+      <div id="domain-input-error" class="input-error hidden"></div>
+
+      <div class="whitelist-container">
+        <ul id="whitelist-items" class="whitelist-items">
+          <!-- Dynamically populated -->
+        </ul>
+        <div id="whitelist-empty" class="whitelist-empty">
+          Chưa có website nào trong danh sách cho phép.
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="card">
+      <div class="card-header">
+        <span class="section-label">Bộ lọc bổ trợ</span>
+      </div>
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-name">Ẩn khung quảng cáo trống</span>
+          <span class="setting-desc">Tối ưu bố cục trang bằng bộ lọc CSS</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="cosmetic-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-name">Chặn cửa sổ bật lên (Popups)</span>
+          <span class="setting-desc">Ngăn chặn mở tab ngoài ý muốn</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="popup-guard-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="privacy-note">Chạy cục bộ • Không thu thập dữ liệu • MV3</p>
+      <p class="version">v1.0.0</p>
+    </footer>
+  </div>
+
+</body>
+</html>

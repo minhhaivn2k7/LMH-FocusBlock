@@ -1,0 +1,32 @@
+{
+  "name": "lmh-focusblock",
+  "version": "1.0.0",
+  "description": "Tiện ích cá nhân chặn quảng cáo và các yếu tố gây phiền trong quá trình học tập",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "node scripts/generate-icons.js && node scripts/build.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node tests/browser/run-e2e.mjs",
+    "test:all": "vitest run && node tests/browser/run-e2e.mjs"
+  },
+  "keywords": [
+    "chrome-extension",
+    "adblock",
+    "manifest-v3",
+    "declarative-net-request",
+    "typescript"
+  ],
+  "author": "LMH",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.308",
+    "@types/node": "^22.13.1",
+    "playwright-core": "^1.64.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}
